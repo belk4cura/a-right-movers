@@ -1,26 +1,171 @@
 @import "tailwindcss";
 
+/* ====================== */
+/* A Right Movers Fonts   */
+/* ====================== */
+
+@font-face {
+  font-family: 'Ambit';
+  src: url('/fonts/Ambit-Regular.woff2') format('woff2'),
+       url('/fonts/Ambit-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ambit';
+  src: url('/fonts/Ambit-SemiBold.woff2') format('woff2'),
+       url('/fonts/Ambit-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ambit';
+  src: url('/fonts/Ambit-Bold.woff2') format('woff2'),
+       url('/fonts/Ambit-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ====================== */
+/* Design Tokens          */
+/* ====================== */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand Colors */
+  --color-navy: #1B3A6B;
+  --color-dark-navy: #0F2341;
+  --color-royal-blue: #2B5EA7;
+  --color-steel-blue: #4A80C4;
+  --color-white: #FFFFFF;
+
+  /* Extended Colors */
+  --color-ice-blue: #E8F0FB;
+  --color-cool-gray: #F5F7FA;
+  --color-silver: #8E9196;
+  --color-medium-gray: #C8CCD2;
+  --color-light-gray: #E8EAED;
+  --color-near-black: #1A1A2E;
+
+  /* Semantic */
+  --color-success: #2E7D4F;
+  --color-warning: #D4880F;
+  --color-error: #C0392B;
+
+  /* Typography */
+  --font-primary: 'Ambit', system-ui, -apple-system, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ====================== */
+/* Base Styles            */
+/* ====================== */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-primary);
+  color: var(--color-dark-navy);
+  background: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ====================== */
+/* Utility Overrides      */
+/* ====================== */
+
+@theme {
+  --color-navy: #1B3A6B;
+  --color-dark-navy: #0F2341;
+  --color-royal-blue: #2B5EA7;
+  --color-steel-blue: #4A80C4;
+  --color-ice-blue: #E8F0FB;
+  --color-cool-gray: #F5F7FA;
+  --color-silver: #8E9196;
+  --color-medium-gray: #C8CCD2;
+  --color-light-gray: #E8EAED;
+  --color-near-black: #1A1A2E;
+  --color-success: #2E7D4F;
+  --color-warning: #D4880F;
+  --color-error: #C0392B;
+}
+
+/* ====================== */
+/* Custom Components      */
+/* ====================== */
+
+.btn-primary {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  font-weight: 700;
+  border-radius: 4px;
+  transition: background-color 0.15s ease-in-out, transform 0.15s ease-in-out;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background-color: #153058;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: var(--color-white);
+  color: var(--color-navy);
+  font-weight: 700;
+  border: 2px solid var(--color-navy);
+  border-radius: 4px;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  cursor: pointer;
+}
+.btn-secondary:hover {
+  background-color: var(--color-ice-blue);
+}
+
+.btn-cta {
+  background-color: var(--color-royal-blue);
+  color: var(--color-white);
+  font-weight: 700;
+  border-radius: 4px;
+  transition: background-color 0.15s ease-in-out, transform 0.15s ease-in-out;
+  cursor: pointer;
+}
+.btn-cta:hover {
+  background-color: var(--color-navy);
+  transform: translateY(-1px);
+}
+
+/* Section pattern */
+.section-padding {
+  padding: 64px 16px;
+}
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 80px 32px;
+  }
+}
+
+/* Card hover lift */
+.card-hover {
+  transition: box-shadow 0.25s ease-in-out, transform 0.25s ease-in-out;
+}
+.card-hover:hover {
+  box-shadow: 0 8px 24px rgba(15, 35, 65, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Gradient background */
+.gradient-brand {
+  background: linear-gradient(135deg, #0F2341 0%, #1B3A6B 40%, #2B5EA7 100%);
+}
+
+/* Input focus */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-royal-blue);
+  box-shadow: 0 0 0 3px rgba(43, 94, 167, 0.15);
 }
