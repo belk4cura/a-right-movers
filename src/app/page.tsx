@@ -85,11 +85,14 @@ export default function Home() {
               <p className="text-steel-blue font-semibold text-sm uppercase tracking-wider mb-3">
                 Atlanta&apos;s Trusted Moving Company
               </p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-6">
-                Your Move,
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-3">
+                We Can Move
                 <br />
-                <span className="text-steel-blue">Done Right.</span>
+                <span className="text-white">Mountains.</span>
               </h1>
+              <p className="text-white font-semibold text-sm uppercase tracking-wider mb-6">
+                — Mark 11:23
+              </p>
               <p className="text-lg text-white/80 mb-8 max-w-lg leading-relaxed">
                 Professional, reliable moving services in Atlanta, Roswell,
                 Alpharetta &amp; throughout the Southeast. Licensed, insured, and

@@ -33,16 +33,16 @@ export default function Header() {
 
       {/* Main header */}
       <header className="sticky top-0 z-50 bg-white shadow-[0_1px_3px_rgba(15,35,65,0.08)]">
-        <div className="max-w-[1200px] mx-auto px-4 flex items-center justify-between h-[72px]">
+        <div className="max-w-[1200px] mx-auto px-4 flex items-center justify-between h-[88px]">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
             <Image
-              src="/images/logo.png"
+              src="/images/logo-trimmed.png"
               alt="A Right Movers"
-              width={160}
-              height={50}
-              className="h-[50px] w-auto"
-              priority
+              width={127}
+              height={80}
+              className="h-[80px] w-auto"
+              preload
             />
           </Link>
 
